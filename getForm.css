@@ -1,0 +1,80 @@
+.container{
+    background-color: blue;
+    height: 100%;
+    width: 60%;
+    border-radius: 20px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+label{
+    margin-left: 20px;
+}
+input{ 
+    margin: 20px;
+   align-content: flex-end;
+}
+
+.formCont{
+    height: 80%;
+    width: 95%;
+    margin: auto;
+    background-color: rgb(190, 190, 190);
+    border-radius: 20px;
+    display: flex;
+}
+button{
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+#ln,#nationality,#password{
+    margin-left: 110px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+#email{
+    margin-left: 133.5px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+#tel{
+    margin-left: 105px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+input[type = "radio"]{
+    margin-left: 125px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+input{
+    border-radius: 5px;
+}
+#username{
+    margin-left: 107px;
+    padding-left: 50px;
+    padding-bottom: 10px; 
+}
+select{
+    margin-left: 96px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    }
+#cpassword{
+    margin-left: 54px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+#fn{
+    margin-left: 107px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+body{
+    background-color: aliceblue;
+}
+h1{
+    color: red;
+    text-align: center;
+}

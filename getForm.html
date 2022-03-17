@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling a form using css</title>
+    <link rel="stylesheet" href="getform.css">
+</head>
+<body>
+  <h1>Registration form</h1>
+  <div class="container">
+      <div class="formCont">
+      <form action="getform.php" method="get" class="main">
+          <label for="firstname">Firstname</label><input name = "firstname" id = "fn" type="text" value=""><br>
+          <label for="lastname">Lastname</label><input name = "lastname" id = "ln" type="text" value=""><br>
+          <label for="email">Email</label><input name = "email" id = "email" type="text" value=""><br>
+          <label for="telephone">Telephone</label><input name = "telephone" id = "tel" type="text" value=""><br>
+          <label for="gender">Gender</label><input  id = "Male" value = "male" name = "gender"  type="radio">Male<input name="sex" value = "female" type="radio">Female<br>
+          <label for="nationality">Nationality </label><select name = "nationality" id = "nationality">
+            <option value="UK">United kingdom</option>
+            <option value="Rwanda">Rwanda</option>
+            <option value="Tz">Tanzanian</option>
+            <option value="Egyptian">Egyptian</option>
+            <option value="Congolese">Congolese</option>
+          </select><br>
+          <label for="username">Username</label><input name = "username" id = "username" type="text" value=""><br>
+          <label for="password">Password</label><input name = "password" id = "password" type="password" value=""><br>
+          <label for="cpassword">Confirm password</label><input  id = "cpassword" type="password" value="" name="cpassword"><br>
+          <button type="submit">Register</button><br>
+        </form>
+    </div>
+  </div>
+</body>
+</html>
