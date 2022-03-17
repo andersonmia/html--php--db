@@ -41,6 +41,8 @@
                     <td><?php echo $row['lastname']?></td>
                     <td><?php echo $row['email']?></td>
                     <td><?php echo $row['username']?></td>
+                    <td><a href='edit10.php?id=".$rows[‘id’].”>Update</a></td>
+                    <td><?php echo $row['username']?></td>
                 </tr>            
             <?php
             }
