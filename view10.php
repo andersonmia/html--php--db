@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table,tr,th,td{            
+            border:solid blue;
+        }
+
+    </style>
 </head>
 <body>
     <?php
@@ -16,6 +22,9 @@
     if(!$connection){
         echo mysqli_connect_error();
     }else{
+        $query = "SELECT * FROM  group10";
+        $select = mysqli_query($connection,$query) or die(mysqli_connect_error());
+        if($select){        
         ?>
         <table>
             <tr>
@@ -25,26 +34,20 @@
                 <th>Email</th>
                 <th>Username</th>
             </tr>
-        
-        <?php
-        $query = "SELECT * FROM  group10";
-        $select = ($connection,$query) or die(mysqli_connect_error());
-        if($select){
-            while($row = mysqli_fetch_assoc($query)){
-                ?>
+    <?php while($row = mysqli_fetch_assoc($select)){?>
                 <tr>
                     <td><?php echo $row['id']?></td>
                     <td><?php echo $row['firstname']?></td>
                     <td><?php echo $row['lastname']?></td>
                     <td><?php echo $row['email']?></td>
                     <td><?php echo $row['username']?></td>
-                </tr>
-            </table>
+                </tr>            
             <?php
             }
         }
     }
     ?>
+    </table>
 </body>
 </html>
 
