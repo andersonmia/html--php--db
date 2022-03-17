@@ -21,20 +21,24 @@
         $select = ($connection,$query) or die(mysqli_connect_error());
         if($select){
             ?>
-            <form action="group10.php" method="post">
+            <form action="update.php" method="post">
         
         <h2>Edit Information</h2>
-        <div class="info">                            
-                <input type="text" name="firstname" id="firstname" placeholder="Firstname">                                    
-                <input type="text" name="lastname" id="lastname" placeholder="Lastname">      
-                <input type="email" name="email" id="email" placeholder="E-mail">           
-                <input type="text" name="username" id="username" placeholder="Username">           
-                <input type="password" name="password" id="password" placeholder="Password">            
-                <input type="password" name="confirm" id="confirm" placeholder="Confirm password">            
-            <button type="submit">Create Account</button>
+        <form action="update10.php" method="post">
+        <div class="info"> 
+            <input type="hidden" name="id" id="id" placeholder="Id" value="<?php $row['id']?>">                           
+                <input type="text" name="firstname" id="firstname" placeholder="Firstname" value="<?php $row['firstname']?>">                                    
+                <input type="text" name="lastname" id="lastname" placeholder="Lastname" value="<?php $row['lastname']?>">      
+                <input type="email" name="email" id="email" placeholder="E-mail" value="<?php $row['email']?>">           
+                <input type="text" name="username" id="username" placeholder="Username" value="<?php $row['username']?>">           
+                <input type="password" name="password" id="password" placeholder="Password" value="<?php $row['password']?>">          
+                            
+            <button type="submit">Update Information</button>
         </div>
     </form>
+    <?php
         }
     }
+    ?>
 </body>
 </html>
