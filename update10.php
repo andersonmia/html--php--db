@@ -1,27 +1,55 @@
-<?php
-$id = $_POST['id'];
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
-$email = $_POST['email'];
-$username = $_POST['username'];
-$password = $_POST['password'];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,th,td{            
+            border:solid blue;
+        }
 
-define("HOST","localhost");
-$db_user = "andersonmia";
-$db_password = "&2005&";
-$db_name = "groupwork";
-$connection = mysqli_connect(HOST,$db_user,$db_password,$db_name);
-if(!$connection){
-    echo mysqli_connect_error();
-}else{
-    $passcode = hash("SHA512",$password);
-    $query = "UPDATE group10 set firstname="$firstname", lastname="$lastname", email="$email",username="$username",password="$passcode" WHERE id = $id";
-    $update = ($connection,$query);
-    if($update){
-        echo "<h1>Data updated succesfully</h1>";
+    </style>
+</head>
+<body>
+    <?php
+    define("HOST","localhost");
+    $db_user = "andersonmia";
+    $db_password = "&2005&";
+    $db_name = "groupwork";
+    $connection = mysqli_connect(HOST,$db_user,$db_password,$db_name);
+    if(!$connection){
+        echo mysqli_connect_error();
     }else{
-        echo "<h1>Data updation failed!</h1>";
+        $query = "SELECT * FROM  group10";
+        $select = mysqli_query($connection,$query) or die(mysqli_connect_error());
+        if($select){        
+        ?>
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Firstname</th>
+                <th>Lastame</th>
+                <th>Email</th>
+                <th>Username</th>
+            </tr>
+    <?php while($row = mysqli_fetch_assoc($select)){?>
+                <tr>
+                    <td><?php echo $row['id']?></td>
+                    <td><?php echo $row['firstname']?></td>
+                    <td><?php echo $row['lastname']?></td>
+                    <td><?php echo $row['email']?></td>
+                    <td><?php echo $row['username']?></td>
+                    <td><a href='userEdit.php?id=".$rows[‘id’].”'>Update</a></td>
+                    
+                </tr>            
+            <?php
+            }
+        }
     }
-}
-?>
-<a href="view.php">Check the results</a>
+    ?>
+    </table>
+</body>
+</html>
+
